@@ -1,1 +1,1 @@
-web: uvicorn main:app --host=0.0.0.0 --port=${PORT:-5000}
+web: uvicorn schneider_gateway_fastapi:app --host=0.0.0.0 --port=${PORT:-5000}
