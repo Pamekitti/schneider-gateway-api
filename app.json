@@ -1,0 +1,16 @@
+{
+    "name": "Schneider Smart Home Backend",
+    "description": "A FastAPI backend for Schneider Smart Home control",
+    "keywords": ["python", "fastapi"],
+    "env": {
+      "PYTHONUNBUFFERED": {
+        "description": "Prevents Python from buffering stdout and stderr",
+        "value": "1"
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }
