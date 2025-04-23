@@ -60,12 +60,31 @@ devices:
 
 ## Usage
 
+### Running Locally
+
 1. Start the server:
 ```bash
 python main.py
 ```
 
-The API will be available at `http://localhost:8000`
+The API will be available at `http://localhost:8001`
+
+### Running with Docker
+
+1. Build and start the container:
+```bash
+docker-compose up -d
+```
+
+The API will be available at `http://localhost:8001`
+
+### Environment Variables
+
+You can customize the application using environment variables. Copy the `.env.example` file to `.env` and modify as needed:
+
+```bash
+cp .env.example .env
+```
 
 ### API Endpoints
 
@@ -98,21 +117,21 @@ Request body:
 
 #### Turn on a light
 ```bash
-curl -X POST http://localhost:8000/control_device \
+curl -X POST http://localhost:8001/control_device \
   -H "Content-Type: application/json" \
   -d '{"device_name": "living_room_light", "action": "on"}'
 ```
 
 #### Set dimmer level
 ```bash
-curl -X POST http://localhost:8000/control_device \
+curl -X POST http://localhost:8001/control_device \
   -H "Content-Type: application/json" \
   -d '{"device_name": "living_room_light", "action": "dim", "level": 50}'
 ```
 
 #### Control AC
 ```bash
-curl -X POST http://localhost:8000/control_device \
+curl -X POST http://localhost:8001/control_device \
   -H "Content-Type: application/json" \
   -d '{"device_name": "living_room_ac", "action": "set_mode", "ac_mode": "cool", "temperature": 24}'
 ```
