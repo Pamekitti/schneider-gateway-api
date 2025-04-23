@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: schneider-gateway-api
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./config.yaml:/app/config.yaml
+    restart: unless-stopped
+    environment:
+      - CONFIG_FILE=/app/config.yaml

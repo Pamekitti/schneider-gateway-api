@@ -1,0 +1,51 @@
+### Schneider Gateway API Configuration Example ###
+
+# Gateway connection settings
+gateway_ip: 192.168.1.x  # Replace with your gateway IP address
+username: admin          # Replace with your gateway username 
+password: admin          # Replace with your gateway password
+cookie: ""               # This will be populated automatically after first connection
+
+# Device configurations
+devices:
+  # Example dimmer device
+  Dimmer_Example:
+    location: Living_room   # Physical location of the device
+    type: DIMMER            # Device type (DIMMER, SWITCH, AC, etc.)
+    entity:
+      addr: 0               # Device address
+      addrMode: 2           # Address mode (usually 2)
+      epId: 10              # Endpoint ID
+
+  # Example switch device
+  Switch_Example:
+    location: Kitchen
+    type: SWITCH
+    entity:
+      addr: 12345           # Device address
+      addrMode: 2
+      epId: 10              # Endpoint ID
+  
+  # Example device with multiple endpoints
+  MultiSwitch_Example:
+    location: Bedroom
+    type: SWITCH
+    entity: 
+      addr: 12345
+      addrMode: 2
+      epId: 11              # Different endpoint ID for the same device address
+
+  # Example AC with IR control
+  AC_Example:
+    location: Living_room
+    type: AC
+    entity:
+      addr: 20000
+      addrMode: 2
+      epId: 1
+    ir_codes:               # IR codes for controlling AC (if applicable)
+      power_on: []          # Add the actual IR code for power on
+      power_off: []         # Add the actual IR code for power off
+      cool_mode: []         # Add the IR code for cool mode
+      heat_mode: []         # Add the IR code for heat mode
+      # Add more IR codes for different temperatures, fan speeds, etc. 
